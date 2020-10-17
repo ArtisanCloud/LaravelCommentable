@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateCommentTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('comments', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->json('content');
+            $table->string('type')->nullable();
+
+            $table->morphs('commentor');
+            $table->uuid('create_by');
+
+            $table->timestamps();
+        });
+
+        Schema::create('commentables', function (Blueprint $table) {
+            $table->integer('comment_id')->unsigned();
+            $table->morphs('commentable');
+
+            $table->unique(['comment_id', 'commentable_id', 'commentable_type']);
+
+            $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
+        });
+    }
+
+    public function down()
+    {
+        Schema::drop('commentables');
+        Schema::drop('comments');
+    }
+}

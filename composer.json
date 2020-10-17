@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ArtisanCloud\\Commentable\\Providers\\TaggableServiceProvider"
+                "ArtisanCloud\\Commentable\\Providers\\CommentableServiceProvider"
             ]
         }
     }
