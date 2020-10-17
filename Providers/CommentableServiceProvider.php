@@ -35,7 +35,7 @@ class CommentableServiceProvider extends ServiceProvider
             // register artisan command
             if (!class_exists('CreateCommentableTable')) {
                 $this->publishes([
-                    __DIR__ . '/../database/migrations/create_tag_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_tag_table.php'),
+                    __DIR__ . '/../database/migrations/create_comment_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_comment_table.php'),
                     // you can add any number of migrations here
                 ], ['ArtisanCloud', 'Commentable-Migration']);
             }
