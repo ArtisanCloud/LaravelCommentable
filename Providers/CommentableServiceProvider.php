@@ -29,6 +29,9 @@ class CommentableServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // config framework router
+        $this->configRouter();
+
         if ($this->app->runningInConsole()) {
             // publish config file
 
@@ -40,5 +43,11 @@ class CommentableServiceProvider extends ServiceProvider
                 ], ['ArtisanCloud', 'Commentable-Migration']);
             }
         }
+    }
+
+    public function configRouter()
+    {
+        $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
+
     }
 }
