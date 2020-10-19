@@ -33,6 +33,8 @@ class CommentService extends ArtisanCloudService
             [
                 'created_by' => $arrayData['user_uuid'],
                 'content' => $arrayData['content'],
+                'type' => $arrayData['type'],
+                'is_public' => $arrayData['is_public'],
                 'commentable_id' => $arrayData['commentable_id'],
                 'commentable_type' => $arrayData['commentable_type'],
                 'reply_comment_id' => $arrayData['reply_comment_id'] ?? 0,

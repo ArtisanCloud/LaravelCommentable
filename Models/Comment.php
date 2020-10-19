@@ -21,6 +21,7 @@ class Comment extends Model
     protected $fillable = [
         'content',
         'type',
+        'is_public',
         'commentable_id',
         'commentable_type',
         'created_by',
