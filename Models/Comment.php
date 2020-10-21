@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 namespace ArtisanCloud\Commentable\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use ArtisanCloud\SaaSFramework\Models\ArtisanCloudModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Comment extends Model
+class Comment extends ArtisanCloudModel
 {
     protected $connection = 'pgsql';
     const TABLE_NAME = 'comments';
