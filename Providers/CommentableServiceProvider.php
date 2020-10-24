@@ -20,6 +20,8 @@ class CommentableServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        // Load the config file and merge it with the user's (should it get published)
+//        $this->mergeConfigFrom( __DIR__.'/../congig/constant.php', 'constant');
     }
 
     /**
@@ -31,6 +33,9 @@ class CommentableServiceProvider extends ServiceProvider
     {
         // config framework router
         $this->configRouter();
+
+        // load translation resource
+//        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'todoable');
 
         if ($this->app->runningInConsole()) {
             // publish config file

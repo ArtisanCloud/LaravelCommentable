@@ -1,0 +1,4 @@
+<?php
+
+
+const API_ERR_CODE_FAIL_TO_CREATE_COMMENT = 43100001;

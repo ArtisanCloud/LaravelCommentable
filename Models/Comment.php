@@ -13,6 +13,10 @@ class Comment extends ArtisanCloudModel
     const TABLE_NAME = 'comments';
     protected $table = self::TABLE_NAME;
 
+    protected $primaryKey = 'id';
+    protected $keyType = 'int';
+    public $incrementing = true;
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -44,6 +48,7 @@ class Comment extends ArtisanCloudModel
         self::TYPE_NORMAL,
         self::TYPE_REPLY,
     ];
+
 
     /**--------------------------------------------------------------- relation functions  -------------------------------------------------------------*/
     /**
