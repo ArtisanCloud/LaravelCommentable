@@ -21,7 +21,7 @@ class CommentableServiceProvider extends ServiceProvider
     {
         //
         // Load the config file and merge it with the user's (should it get published)
-//        $this->mergeConfigFrom( __DIR__.'/../congig/constant.php', 'constant');
+        include_once(__DIR__.'/../config/constant.php');
     }
 
     /**

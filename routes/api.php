@@ -45,5 +45,11 @@ Route::group(
         'middleware' => ['checkLandlord', 'checkHeader', 'auth:api', 'checkUser']
     ], function () use ($_methodGet, $_methodPost, $_methodPut, $_methodDelete) {
 
-    
+    Route::match($_methodPost, 'comment/create', [CommentAPIController::class, 'apiCreate'])->name('comment.write.create');
+    Route::match($_methodGet, 'comment/read/item', [CommentAPIController::class, 'apiReadItem'])->name('comment.read.item');
+    Route::match($_methodGet, 'comment/read/list', [CommentAPIController::class, 'apiReadList'])->name('comment.read.list');
+    Route::match($_methodPut, 'comment/update', [CommentAPIController::class, 'apiUpdate'])->name('comment.write.update');
+    Route::match($_methodDelete, 'comment/delete', [CommentAPIController::class, 'apiDelete'])->name('comment.write.Delete');
+
+
 });
