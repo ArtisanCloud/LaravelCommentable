@@ -28,7 +28,7 @@ class RequestCommentReadItems extends RequestBasic
      */
     public function authorize()
     {
-        $strModelsNameSpace = config('artisancloud.framework.model.namespace');
+        $strModelsNameSpace = config('artisancloud.framework.model_namespace');
         $objectClass = $strModelsNameSpace . Str::ucfirst($this->input('commentableType'));
         $object = $objectClass::where('uuid', $this->input('commentableId'))->first();
 //        dd($object);
